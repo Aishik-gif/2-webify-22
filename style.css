@@ -17,10 +17,10 @@ body * {
 body{
   font-family: 'Poppins',sans-serif;
   font-weight: 200;
-  font-size: 1.5rem;
-  background-color:steelblue;
+  font-size: 1.5rem;  
+  background: url("sources/background-img.jpg") fixed;
+  background-position: center;
   color: aliceblue;
-
   display: grid;
   grid: "h h h h" auto ". l t .." auto / 0.3fr minmax(100px,1fr) minmax(250px, 2.5fr) 0.7fr;
   column-gap: 10px;
@@ -33,10 +33,9 @@ body{
   font-size: calc(5vw + 2rem);
   margin-top: -0.4em;
   color: rgba(255, 255, 255, 0.2);
-  background: linear-gradient(rgb(111, 122, 130),steelblue);
 }
 
-.tasks{
+div.tasks{
   grid-area: l;
   display: flex;
   flex-direction: column;
@@ -56,7 +55,7 @@ body{
   font-weight: 500;
 }
 
-li:hover{
+.list-name:hover{
   opacity: 0.7;
   cursor: pointer;
 }
@@ -113,6 +112,8 @@ input[type="text"]:focus::placeholder{
   background: rgb(233, 244, 255);
   color: rgb(17, 17, 17);
   margin: 10px 0;
+  border-radius: 7px;
+  height: fit-content;
 }
 
 .todo-header{
@@ -170,7 +171,7 @@ input[type="checkbox"]:hover,input[type="checkbox"]:focus{
 }
 
 input[type="checkbox"]:focus{
-  border: 2px solid steelblue;
+  border: 2px solid purple;
   outline: none;
 }
 
@@ -196,12 +197,16 @@ input.new-task{
   font-size: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.107);
   width: calc(100% - 2.5em);
-  padding: 10px 0;
+  padding: 10px 0 10px 5px;
   outline: none;
   cursor: text;
 }
 
-div.task:hover{
+.task div:hover, .task div:focus{
+  box-shadow: 0 -2px rgba(0, 0, 0, 0.5) inset;
+}
+
+li.task:hover{
   background: rgba(0, 0, 0, 0.05);
 }
 
@@ -209,10 +214,15 @@ div.task:hover{
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 0;
+}
+
+.delete img{
+  font-size: 1.3rem;
 }
 
 .delete:hover{
-  opacity: 0.7;
+  filter: invert(29%) sepia(22%) saturate(6578%) hue-rotate(343deg) brightness(86%) contrast(92%);
   transform: scale(1.1);
 }
 
@@ -228,29 +238,65 @@ div.task:hover{
 }
 
 .operator button{
-  background: rgba(189, 226, 255, 0.6);
+  background: rgba(75, 1, 75, 0.3);
   border: none;
   padding: 0 1rem;
   cursor: pointer;
   font-size: 0.8em;
+  border-radius: 5px;
 }
 
 .operator button:hover{
-  background: rgba(189, 226, 255, 0.5);
+  background: rgba(75, 1, 75, 0.2);
   color: rgb(255, 90, 90);
 }
 
 h2.list-title{
   outline: none;
+  padding: 0 10px;
+}
+
+h2.list-title:hover, h2.list-title:focus{
+  box-shadow: 0 -2px rgba(0, 0, 0, 0.5) inset;
 }
 
 .btn.add{
   font-size: 1.4em;
   font-weight: 800;
-  color: rgb(50, 102, 144);
+  color: rgb(75, 1, 75);
 }
 
 .btn.add:hover{
   transform: scale(1.2);
   opacity: 0.85;
+}
+
+.mobile{
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  width: 2em;
+  height: 2em;
+  max-width: 2em;
+  max-height: 2em;
+  border-radius: 50%;
+  border: none;
+  color: purple;
+  font-weight: 400;
+  font-size: 2rem;
+  cursor: pointer;
+  background: rgb(237, 252, 252);
+  box-shadow: 0 0 10px 1px grey;
+}
+
+@media only screen and (max-width: 500px) {
+  body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .todo-list{
+    width: 90vw;
+  }
 }
