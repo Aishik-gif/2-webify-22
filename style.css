@@ -11,22 +11,25 @@ body * {
   font-size: unset;
   color: unset;
   text-decoration: unset;
-  font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
-body{
-  font-family: 'Poppins',sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
-  font-size: 1.5rem;  
-  background: url("sources/background-img.jpg") fixed;
+  font-size: 1.5rem;
+  background: url("sources/background-img.jpg?format=webp") fixed;
   background-position: center;
   color: aliceblue;
   display: grid;
-  grid: "h h h h" auto ". l t .." auto / 0.3fr minmax(100px,1fr) minmax(250px, 2.5fr) 0.7fr;
+  grid: "h h h h" auto ". l t .." auto / 0.3fr minmax(100px, 1fr) minmax(
+      250px,
+      2.5fr
+    ) 0.7fr;
   column-gap: 10px;
 }
 
-.title{
+.title {
   grid-area: h;
   text-align: center;
   font-weight: 900;
@@ -35,79 +38,79 @@ body{
   color: rgba(255, 255, 255, 0.2);
 }
 
-div.tasks{
+div.tasks {
   grid-area: l;
   display: flex;
   flex-direction: column;
   align-items: baseline;
 }
 
-.task-list-title{
+.task-list-title {
   font-size: 1.2rem;
 }
 
-.task-list{
+.task-list {
   font-size: 1rem;
-  list-style:none;
+  list-style: none;
 }
 
-.active-list{
+.active-list {
   font-weight: 500;
 }
 
-.list-name:hover{
+.list-name:hover {
   opacity: 0.7;
   cursor: pointer;
 }
 
-form{
-  display:flex;
+form {
+  display: flex;
 }
 
-input[type="text"]{
+input[type="text"] {
   background: transparent;
   border: none;
   outline: none;
   border-bottom: 1px solid aliceblue;
-  font-size: 1rem;  
+  font-size: 1rem;
   padding-left: 3px;
   padding-bottom: 2px;
   transition: all 120ms;
-  order:2;
+  order: 2;
   width: 80%;
 }
 
-input[type="text"]::placeholder{
+input[type="text"]::placeholder {
   color: rgba(255, 255, 255, 0.596);
 }
 
-input[type="text"]:focus{
+input[type="text"]:focus {
   border-bottom: 2px solid;
 }
 
-input[type="text"]:focus::placeholder{
+input[type="text"]:focus::placeholder {
   opacity: 0.2;
 }
 
-.new-form{
+.new-form {
   display: flex;
   justify-content: center;
-  width:90%;
+  width: 90%;
 }
 
-.btn{
-  background:transparent;
+.btn {
+  background: transparent;
   border: none;
   padding-right: 0.2em;
   cursor: pointer;
   font-weight: 900;
 }
 
-.btn:hover{
+.btn:hover {
   opacity: 0.25;
 }
 
-.todo-list{
+.todo-list {
   grid-area: t;
   background: rgb(233, 244, 255);
   color: rgb(17, 17, 17);
@@ -116,38 +119,38 @@ input[type="text"]:focus::placeholder{
   height: fit-content;
 }
 
-.todo-header{
+.todo-header {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
   padding-top: 0.6em;
 }
 
-.list-title{
+.list-title {
   font-size: 1.8rem;
 }
 
-.task-count{
+.task-count {
   font-size: 0.8rem;
 }
 
-.todo-body{
+.todo-body {
   padding: 1.1em 0;
 }
 
-.task{
+.task {
   font-size: 1.2rem;
 }
 
-input[type="text"].new-task{
+input[type="text"].new-task {
   border-bottom: 1px solid rgba(0, 0, 0, 0.329);
 }
 
-input[type="text"].new-task::placeholder{
+input[type="text"].new-task::placeholder {
   color: rgba(0, 0, 0, 0.329);
 }
 
-input[type="checkbox"]{
+input[type="checkbox"] {
   appearance: none;
   background-color: white;
   min-width: 0.6em;
@@ -158,34 +161,36 @@ input[type="checkbox"]{
   cursor: pointer;
 }
 
-input[type="checkbox"]:checked{
+input[type="checkbox"]:checked {
   background-color: lightslategray;
 }
 
-input[type="checkbox"]:active, input[type="checkbox"]:checked:active{
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px  3px rgba(0, 0, 0, 0.1);
+input[type="checkbox"]:active,
+input[type="checkbox"]:checked:active {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px 3px rgba(0, 0, 0, 0.1);
 }
 
-input[type="checkbox"]:hover,input[type="checkbox"]:focus{
+input[type="checkbox"]:hover,
+input[type="checkbox"]:focus {
   transform: scale(1.1);
 }
 
-input[type="checkbox"]:focus{
+input[type="checkbox"]:focus {
   border: 2px solid purple;
   outline: none;
 }
 
-input[type="checkbox"]:checked + div{
+input[type="checkbox"]:checked + div {
   opacity: 0.5;
   text-decoration: line-through;
 }
 
-input.new-task{
+input.new-task {
   margin-top: 0.5em;
   font-size: 1.5rem;
 }
 
-.task{
+.task {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -193,7 +198,7 @@ input.new-task{
   padding: 0 1.1em;
 }
 
-.task div{
+.task div {
   font-size: 1.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.107);
   width: calc(100% - 2.5em);
@@ -202,42 +207,44 @@ input.new-task{
   cursor: text;
 }
 
-.task div:hover, .task div:focus{
+.task div:hover,
+.task div:focus {
   box-shadow: 0 -2px rgba(0, 0, 0, 0.5) inset;
 }
 
-li.task:hover{
+li.task:hover {
   background: rgba(0, 0, 0, 0.05);
 }
 
-.delete{
+.delete {
   background: none;
   border: none;
   cursor: pointer;
   font-size: 0;
 }
 
-.delete img{
+.delete img {
   font-size: 1.3rem;
 }
 
-.delete:hover{
-  filter: invert(29%) sepia(22%) saturate(6578%) hue-rotate(343deg) brightness(86%) contrast(92%);
+.delete:hover {
+  filter: invert(29%) sepia(22%) saturate(6578%) hue-rotate(343deg)
+    brightness(86%) contrast(92%);
   transform: scale(1.1);
 }
 
-.icon{
+.icon {
   width: 1em;
   height: 1em;
 }
 
-.operator{
+.operator {
   display: flex;
   justify-content: space-around;
   padding-top: 0.5em;
 }
 
-.operator button{
+.operator button {
   background: rgba(75, 1, 75, 0.3);
   border: none;
   padding: 0 1rem;
@@ -246,32 +253,33 @@ li.task:hover{
   border-radius: 5px;
 }
 
-.operator button:hover{
+.operator button:hover {
   background: rgba(75, 1, 75, 0.2);
   color: rgb(255, 90, 90);
 }
 
-h2.list-title{
+h2.list-title {
   outline: none;
   padding: 0 10px;
 }
 
-h2.list-title:hover, h2.list-title:focus{
+h2.list-title:hover,
+h2.list-title:focus {
   box-shadow: 0 -2px rgba(0, 0, 0, 0.5) inset;
 }
 
-.btn.add{
+.btn.add {
   font-size: 1.4em;
   font-weight: 800;
   color: rgb(75, 1, 75);
 }
 
-.btn.add:hover{
+.btn.add:hover {
   transform: scale(1.2);
   opacity: 0.85;
 }
 
-.mobile{
+.mobile {
   position: fixed;
   bottom: 1em;
   right: 1em;
@@ -289,14 +297,18 @@ h2.list-title:hover, h2.list-title:focus{
   box-shadow: 0 0 10px 1px grey;
 }
 
-@media only screen and (max-width: 500px) {
-  body{
+@media only screen and (max-width: 750px) {
+  body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  .todo-list{
+  .todo-list {
     width: 90vw;
+  }
+  .operator button {
+    padding: 0 10px;
+    font-size: 1rem;
   }
 }

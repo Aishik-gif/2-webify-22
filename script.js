@@ -11,6 +11,7 @@ const newTaskForm = document.querySelector(".new-form");
 const newTaskInput = document.querySelector(".new-task");
 const sortBtn = document.querySelector(".sort");
 const taskContents = document.querySelectorAll("div");
+const delChecked = document.querySelector(".delete-checked");
 
 const LOCAL_STORAGE_LIST_KEY = "task.lists";
 const LOCAL_STORAGE_SELECTED_LIST_KEY = "task.selectedListId";
@@ -111,6 +112,14 @@ deleteListBtn.addEventListener("click", (e) => {
   saveAndRender();
 });
 
+delChecked.addEventListener("click", (e) => {
+  const selectedListName = lists.find((list) => list.id === selectedList);
+  selectedListName.task = selectedListName.task.filter(
+    (task) => !task.complete
+  );
+  saveAndRender();
+});
+
 function createList(name) {
   return { id: Date.now().toString(), content: name, task: [] };
 }
@@ -183,7 +192,7 @@ function clearElement(element) {
   }
 }
 
-function afocus(){
+function afocus() {
   newListInput.focus();
 }
 
