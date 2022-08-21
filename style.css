@@ -11,5 +11,246 @@ body * {
   font-size: unset;
   color: unset;
   text-decoration: unset;
+  font-family: 'Poppins';
 }
 
+body{
+  font-family: 'Poppins',sans-serif;
+  font-weight: 200;
+  font-size: 1.5rem;
+  background-color:steelblue;
+  color: aliceblue;
+
+  display: grid;
+  grid: "h h h h" auto ". l t .." auto / 0.3fr minmax(100px,1fr) minmax(250px, 2.5fr) 0.7fr;
+  column-gap: 10px;
+}
+
+.title{
+  grid-area: h;
+  text-align: center;
+  font-weight: 900;
+  font-size: calc(5vw + 2rem);
+  margin-top: -0.4em;
+  color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(rgb(111, 122, 130),steelblue);
+}
+
+.tasks{
+  grid-area: l;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.task-list-title{
+  font-size: 1.2rem;
+}
+
+.task-list{
+  font-size: 1rem;
+  list-style:none;
+}
+
+.active-list{
+  font-weight: 500;
+}
+
+li:hover{
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+form{
+  display:flex;
+}
+
+input[type="text"]{
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid aliceblue;
+  font-size: 1rem;  
+  padding-left: 3px;
+  padding-bottom: 2px;
+  transition: all 120ms;
+  order:2;
+  width: 80%;
+}
+
+input[type="text"]::placeholder{
+  color: rgba(255, 255, 255, 0.596);
+}
+
+input[type="text"]:focus{
+  border-bottom: 2px solid;
+}
+
+input[type="text"]:focus::placeholder{
+  opacity: 0.2;
+}
+
+.new-form{
+  display: flex;
+  justify-content: center;
+  width:90%;
+}
+
+.btn{
+  background:transparent;
+  border: none;
+  padding-right: 0.2em;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.btn:hover{
+  opacity: 0.25;
+}
+
+.todo-list{
+  grid-area: t;
+  background: rgb(233, 244, 255);
+  color: rgb(17, 17, 17);
+  margin: 10px 0;
+}
+
+.todo-header{
+  display: flex;
+  justify-content: space-around;
+  align-items: baseline;
+  padding-top: 0.6em;
+}
+
+.list-title{
+  font-size: 1.8rem;
+}
+
+.task-count{
+  font-size: 0.8rem;
+}
+
+.todo-body{
+  padding: 1.1em 0;
+}
+
+.task{
+  font-size: 1.2rem;
+}
+
+input[type="text"].new-task{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.329);
+}
+
+input[type="text"].new-task::placeholder{
+  color: rgba(0, 0, 0, 0.329);
+}
+
+input[type="checkbox"]{
+  appearance: none;
+  background-color: white;
+  min-width: 0.6em;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  border: 2px solid darkgray;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked{
+  background-color: lightslategray;
+}
+
+input[type="checkbox"]:active, input[type="checkbox"]:checked:active{
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px  3px rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"]:hover,input[type="checkbox"]:focus{
+  transform: scale(1.1);
+}
+
+input[type="checkbox"]:focus{
+  border: 2px solid steelblue;
+  outline: none;
+}
+
+input[type="checkbox"]:checked + div{
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+input.new-task{
+  margin-top: 0.5em;
+  font-size: 1.5rem;
+}
+
+.task{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: calc(100% - 2.2em);
+  padding: 0 1.1em;
+}
+
+.task div{
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.107);
+  width: calc(100% - 2.5em);
+  padding: 10px 0;
+  outline: none;
+  cursor: text;
+}
+
+div.task:hover{
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.delete{
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.delete:hover{
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.icon{
+  width: 1em;
+  height: 1em;
+}
+
+.operator{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.5em;
+}
+
+.operator button{
+  background: rgba(189, 226, 255, 0.6);
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+  font-size: 0.8em;
+}
+
+.operator button:hover{
+  background: rgba(189, 226, 255, 0.5);
+  color: rgb(255, 90, 90);
+}
+
+h2.list-title{
+  outline: none;
+}
+
+.btn.add{
+  font-size: 1.4em;
+  font-weight: 800;
+  color: rgb(50, 102, 144);
+}
+
+.btn.add:hover{
+  transform: scale(1.2);
+  opacity: 0.85;
+}

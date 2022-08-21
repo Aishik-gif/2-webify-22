@@ -9,6 +9,57 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    
+    <h1 class="title">Things to do</h1>
+
+    <div class="tasks">
+      <h2 class="task-list-title">My tasks</h2>
+      <ul class="task-list">
+        <li class="active-list">Youtube</li>
+        <li>Work</li>
+        <li>Grocery</li>
+      </ul>
+      <form action="">
+        <input type="text" class="new-list" placeholder="new list name" required>
+        <button class="btn list">+</button>
+      </form>
+    </div>
+
+    <div class="todo-list">
+      <div class="todo-header">
+        <h2 class="list-title" contenteditable="true" spellcheck="false">Youtube</h2>
+        <p class="task-count">3 task remaining</p>
+      </div>
+      <div class="todo-body">
+        <div class="tasks">
+          <div class="task">
+            <input type="checkbox" id="task-1" class="check-box">
+            <div contenteditable="true" spellcheck="false">Lorem, ipsum dolor sit amet consectetuptatibus eum repellend</div>
+            <button class="delete"><img src="sources/trash-solid.svg" alt="" class="icon"></button> 
+          </div>
+          <div class="task">
+            <input type="checkbox" id="task-2" class="check-box">
+            <div contenteditable="true" spellcheck="false">hello</div>
+            <button class="delete"><img src="sources/trash-solid.svg" alt="" class="icon"></button>
+          </div>
+          <div class="task">
+            <input type="checkbox" id="task-3" class="check-box">
+            <div contenteditable="true" spellcheck="false">sd</div>
+            <button class="delete"><img src="sources/trash-solid.svg" alt="" class="icon"></button>
+          </div>
+        </div>
+
+        <div class="new-tasks">
+          <form action="" class="new-form">
+            <input type="text" class="new-task" placeholder="enter task">
+            <button class="btn add">+</button>
+          </form>
+        </div>
+
+        <div class="operator">
+          <button class="sort">Sort</button>
+          <button class="delete-list">Delete list</button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
